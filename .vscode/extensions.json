@@ -9,6 +9,11 @@
         "ms-toolsai.vscode-jupyter-slideshow",
         "ms-toolsai.vscode-jupyter-cell-tags",
         "ms-toolsai.jupyter-renderers",
-        "ms-dotnettools.dotnet-interactive-vscode"
+        "ms-dotnettools.dotnet-interactive-vscode",
+        "batisteo.vscode-django",
+        "ms-python.mypy-type-checker",
+        "usernamehw.errorlens",
+        "visualstudioexptteam.vscodeintellicode",
+        "charliermarsh.ruff"
     ]
 }
