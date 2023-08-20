@@ -39,3 +39,8 @@
 ```
 
 2. Select newly created virtual environment for the `python-workbook.ipynb` notebook.
+
+
+## References
+
+- [Python for C# Developers by David Betteridge](https://youtu.be/LGMo1aJYYaE) and [code PythonTalks](https://github.com/DavidBetteridge/PythonTalks)
