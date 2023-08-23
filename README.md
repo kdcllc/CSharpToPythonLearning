@@ -7,6 +7,16 @@ Embark on an exhilarating voyage as a C# developer diving headfirst into the cap
 - [VSCode python specific extensions](vscode-python-extensions.md)
 - [Python3 dependencies and package management](./deps-management)
 
+## Hire me
+
+Please send [email](mailto:kingdavidconsulting@gmail.com) if you consider to **hire me**.
+
+[![buymeacoffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/vyve0og)
+
+## Give a Star! :star
+
+If you like or are using this project to learn or start your solution, please give it a star. Thanks!
+
 ## Questions
 
 Certainly! Here are more questions that programmers might ask to describe the process of writing software with Python:
