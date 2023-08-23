@@ -24,3 +24,31 @@ Use `__path__` is a list
 ```
 
 2. `__all__` module level attribute that controls how `import *` behavior if not specified, import all public names.
+
+## Executing directories or packages
+
+- add {directory_name} to `sys.path`
+- add {directory_name}__main__.py is not in a package
+
+Then you can run it as follows
+
+```python
+    python {directory_name}
+```
+
+- `-m` instructs python to treat it as a module
+- {directory_name} is treated as  a module
+- {directory_name}__main__.py  is a submodule of the directory package
+
+```python
+    python -m {directory_name}
+```
+
+## Build and Distribution
+
+- `python setup.py sdist` - build in functionality and allows for source distribution
+- install wheel first `pip install wheel` then `python setup.py bdist_wheel`
+
+```python
+    python3 -m pip install --upgrade pip
+```
