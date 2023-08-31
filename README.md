@@ -6,6 +6,7 @@ Embark on an exhilarating voyage as a C# developer diving headfirst into the cap
 - [Language syntax specific practices](./practices)
 - [VSCode python specific extensions](vscode-python-extensions.md)
 - [Python3 dependencies and package management](./deps-management)
+- [Python3 and databases](./databases)
 
 ## Hire me
 
