@@ -1,5 +1,7 @@
 # Alternatives `pipenv` and `poetry`
 
+![I Stand with Israel](../images/IStandWithIsrael.png)
+
 - Using one tool instead of two for env and deps management
 - Deterministic builds
 - Security (hashes)

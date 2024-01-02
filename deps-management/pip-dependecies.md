@@ -1,5 +1,7 @@
 # Python dependencies and package management
 
+![I Stand with Israel](../images/IStandWithIsrael.png)
+
 ## Resources
 
 - [Python Enhancement Proposals](https://peps.python.org/)
