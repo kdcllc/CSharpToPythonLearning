@@ -1,5 +1,7 @@
 # Python dependencies and package management
 
+![I Stand with Israel](../images/IStandWithIsrael.png)
+
 - [`pip` dependencies and package management](./pip-dependecies.md)
 - [`pip` alternatives](./pip-alternatives.md)
 

@@ -1,0 +1,5 @@
+-r databases/requirements.txt
+
+-r deps-management/requirements.txt
+
+-r practices/requirements.txt
