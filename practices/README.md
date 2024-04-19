@@ -41,6 +41,22 @@
 2. Select newly created virtual environment for the `python-workbook.ipynb` notebook.
 
 
+## Install multiple versions
+
+```bash
+    
+    sudo add-apt-repository ppa:deadsnakes/ppa --yes
+
+    sudo apt update && sudo apt upgrade -y
+
+    sudo apt install python3.11 -y
+
+    python3.11 --version
+
+    python3.11 -m pip list
+```
+
 ## References
 
 - [Python for C# Developers by David Betteridge](https://youtu.be/LGMo1aJYYaE) and [code PythonTalks](https://github.com/DavidBetteridge/PythonTalks)
+- [How to Install and Switch Python Versions on Ubuntu 22.04](https://www.eukhost.com/kb/how-to-install-and-switch-python-versions-on-ubuntu-22-04/)
