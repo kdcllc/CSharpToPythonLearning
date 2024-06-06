@@ -27,7 +27,9 @@ An Alternative method is to use `apt`
     sudo apt-get install python3.5
 ```
 
-Install 
+## Install [pyenv](https://github.com/pyenv/pyenv)
+
+### Instal dependeces
 
 This script clones the repo with all of the shell scripts.
 
@@ -39,30 +41,31 @@ This script clones the repo with all of the shell scripts.
     sudo apt-get install python-tk python3-tk tk-dev
 ```
 
+### Install `pyenv`
+
 ```bash
     $ curl https://pyenv.run | bash
 ```
 
-Add the following to the end of `~/bashrc` file.
+### Update `~/.bashrc` file
+
+Add the following to the end of `~/.bashrc` file.
 
 ```bash
     export PYENV_ROOT="$HOME/.pyenv"
     [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
-    
-    
-    # OPTIONAL
 
     #BUILD LOCATION
     export TMPDIR="$HOME/.pyenv-tmp"
-    
+   
     # LOAD VENV
     # Load pyenv-virtualenv automatically by adding
     # the following to ~/.bashrc:
     eval "$(pyenv virtualenv-init -)"
-
 ```
 
+### Install latest version of Python
 
 ```bash
 
@@ -79,6 +82,37 @@ Add the following to the end of `~/bashrc` file.
 ```
 
 ![env](images/pyenv-python-version.png)
+
+[pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
+
+### Install Aider Or Poerty virtual enviroments
+
+Once we have multipe python version running, there are sometimes a neeed to have a pre loaded global dependecies to be used for the project.
+
+[aider](https://github.com/paul-gauthier/aider)
+
+```bash
+    # create an enviroment
+    pyenv virtualenv 3.12.3 aider
+
+    # to display newly created copy 
+    pyenv versions
+
+    # activate now
+    pyenv activate aider
+    
+    # deactivate
+    pyenv deactivate
+
+    # install aider
+    pip install aider-chat
+
+    # to see number of package that were installed
+    pip freeze | wc -l
+    
+```
+
+
 
 ## References
 
