@@ -119,6 +119,13 @@ By default, auto-commit changes are enabled. To override the default, add the fo
 export AIDER_AUTO_COMMITS=0
 ```
 
+To add this automatically from a bash command, you can use the following script:
+
+```bash
+echo 'export AIDER_AUTO_COMMITS=0' >> ~/.bashrc
+source ~/.bashrc
+```
+
 ```bash
 #OLLAMA_API_BASE=http://localhost:11434/
 
