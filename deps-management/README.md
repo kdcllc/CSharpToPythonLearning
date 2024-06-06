@@ -182,7 +182,63 @@ poetry remove requests
 poetry add pytest --group test
 ```
 
+## Alternative Tooling for Project-Level Dependency Management
+
+In addition to `pipenv` and `poetry`, there are other tools available for managing dependencies at the project level in Python. These tools offer various features and can be chosen based on your specific needs.
+
+### `pip-tools`
+
+`pip-tools` helps you keep your `requirements.txt` files up to date, and it can generate them from a `requirements.in` file.
+
+```bash
+pip install pip-tools
+pip-compile requirements.in
+pip-sync
+```
+
+### `pdm`
+
+`pdm` is a modern Python package and dependency manager supporting the latest PEP standards.
+
+```bash
+pipx install pdm
+pdm init
+pdm add requests
+pdm install
+pdm list
+pdm remove requests
+```
+
+### `hatch`
+
+`hatch` is a modern project manager for Python that aims to provide a unified solution for managing project environments, dependencies, and releases.
+
+```bash
+pipx install hatch
+hatch new my_project
+cd my_project
+hatch env create
+hatch run python -m my_project
+hatch build
+```
+
+### `conda`
+
+`conda` is an open-source package management and environment management system that runs on Windows, macOS, and Linux. It quickly installs, runs, and updates packages and their dependencies.
+
+```bash
+conda create --name myenv
+conda activate myenv
+conda install numpy
+conda list
+conda remove numpy
+conda deactivate
+```
+
 ## More Options
 
 - [pip-tools](https://github.com/jazzband/pip-tools)
 - [pdm](https://github.com/pdm-project/pdm)
+- [hatch](https://github.com/ofek/hatch)
+- [conda](https://docs.conda.io/en/latest/)
+
