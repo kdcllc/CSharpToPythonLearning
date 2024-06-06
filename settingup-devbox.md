@@ -113,6 +113,24 @@ pip install aider-chat
 pip freeze | wc -l
 ```
 
+```bash
+#OLLAMA_API_BASE=http://localhost:11434/
+
+# https://aider.chat/docs/llms.html#azure
+# aider --model azure/gpt-4-32k --no-auto-commits
+
+AZURE_API_KEY=
+AZURE_API_VERSION=
+AZURE_API_BASE=
+
+
+# https://github.com/paul-gauthier/aider/issues/596
+
+# https://aider.chat/docs/llms.html#ollama
+# export OLLAMA_API_BASE=http://127.0.0.1:11434
+# aider --model ollama/mistral:latest
+# aider --model ollama/codellama:7b --no-auto-commits
+```
 #### Poetry
 
 [Poetry](https://python-poetry.org/) is another tool for dependency management and packaging in Python.
@@ -150,6 +168,90 @@ poetry shell
 
 # Deactivate the virtual environment
 exit
+```
+
+## Additional Useful Commands
+
+### Updating Python Packages
+
+To update all installed Python packages, use the following command:
+
+```bash
+pip list --outdated | grep -v '^\-e' | cut -d ' ' -f1 | xargs -n1 pip install -U
+```
+
+### Uninstalling Python Packages
+
+To uninstall a Python package, use the following command:
+
+```bash
+pip uninstall <package_name>
+```
+
+### Creating and Managing Virtual Environments with `venv`
+
+To create a virtual environment using `venv`, use the following command:
+
+```bash
+python3 -m venv myenv
+```
+
+To activate the virtual environment:
+
+```bash
+source myenv/bin/activate
+```
+
+To deactivate the virtual environment:
+
+```bash
+deactivate
+```
+
+### Checking Python Version
+
+To check the current Python version, use the following command:
+
+```bash
+python --version
+```
+
+### Basic Git Commands
+
+To initialize a new Git repository:
+
+```bash
+git init
+```
+
+To clone an existing repository:
+
+```bash
+git clone <repository_url>
+```
+
+To check the status of your repository:
+
+```bash
+git status
+```
+
+To add changes to the staging area:
+
+```bash
+git add <file_name>
+```
+
+To commit changes:
+
+```bash
+git commit -m "Your commit message"
+```
+
+To push changes to a remote repository:
+
+```bash
+git push origin <branch_name>
 ```
 
 ## References
