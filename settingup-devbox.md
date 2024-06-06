@@ -131,7 +131,7 @@ pyenv activate poetry
 pyenv deactivate
 
 # Install Poetry
-curl -sSL https://install.python-poetry.org | python3 -
+curl -sSL https://install.python-poetry.org | python -
 
 # Configure Poetry to create virtual environments inside the project directory
 poetry config virtualenvs.in-project true
