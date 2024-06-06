@@ -1,121 +1,147 @@
-# Linux Ununtu DevBox setup
+# Linux Ubuntu DevBox Setup
 
 ![I stand with Israel](./images/IStandWithIsrael.png)
 
 Ubuntu 22.04 comes with Python `3.10.12`.
 
+## How to Install and Manage Other Versions of Python Interpreters
 
-How to install and manange other version of Python interpertors?
-`/usr/bin/python3`
+The default Python interpreter is located at `/usr/bin/python3`.
 
-# Displays all of the installed dependencies
+### Display All Installed Dependencies
+
+To list all installed Python dependencies, use the following command:
 
 ```bash
 apt list --installed | grep python
 ```
 
-## Installing multiple versions of Python and switching between them
+## Installing Multiple Versions of Python and Switching Between Them
 
+[`pyenv`](https://github.com/pyenv/pyenv) is a utility for managing multiple Python versions, similar to [`nvm`](https://github.com/nvm-sh/nvm) for Node.js.
 
-[`pyenv`](https://github.com/pyenv/pyenv) is like [`nvm`](https://github.com/nvm-sh/nvm) utility for nodejs.
-
-An Alternative method is to use `apt`
+An alternative method is to use `apt`:
 
 ```bash
-    sudo add-apt-repository ppa:deadsnakes/ppa
-    sudo apt-get update
-    sudo apt-get install python3.5
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt-get install python3.5
 ```
 
 ## Install [pyenv](https://github.com/pyenv/pyenv)
 
-### Instal dependeces
+### Install Dependencies
 
-This script clones the repo with all of the shell scripts.
+This script installs the necessary dependencies and clones the `pyenv` repository.
 
 ```bash
-    # prereq
-    sudo apt install libedit-dev
-    sudo apt uninstall python3-pip
-    sudo apt-get install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev
-    sudo apt-get install python-tk python3-tk tk-dev
+# Prerequisites
+sudo apt install libedit-dev
+sudo apt uninstall python3-pip
+sudo apt-get install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libreadline-dev libsqlite3-dev liblzma-dev
+sudo apt-get install python-tk python3-tk tk-dev
 ```
 
 ### Install `pyenv`
 
 ```bash
-    $ curl https://pyenv.run | bash
+curl https://pyenv.run | bash
 ```
 
-### Update `~/.bashrc` file
+### Update `~/.bashrc` File
 
-Add the following to the end of `~/.bashrc` file.
+Add the following lines to the end of your `~/.bashrc` file to initialize `pyenv`:
 
 ```bash
-    export PYENV_ROOT="$HOME/.pyenv"
-    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-    #BUILD LOCATION
-    export TMPDIR="$HOME/.pyenv-tmp"
-   
-    # LOAD VENV
-    # Load pyenv-virtualenv automatically by adding
-    # the following to ~/.bashrc:
-    eval "$(pyenv virtualenv-init -)"
+# Build Location
+export TMPDIR="$HOME/.pyenv-tmp"
+
+# Load Virtualenv
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+eval "$(pyenv virtualenv-init -)"
 ```
 
-### Install latest version of Python
+### Install the Latest Version of Python
 
 ```bash
+pyenv install --list | grep " 3\.[12]"
 
-    pyenv install --list | grep " 3\.[12]"
-    
-    # dowloads bits and build it on the machine.
-    pyenv install  3.12.3
-    
-    #pyenv uninstall
-    
-    pyenv versions
-    
-    pyenv global 3.12.3
+# Downloads and builds the specified version
+pyenv install 3.12.3
+
+# List installed versions
+pyenv versions
+
+# Set global Python version
+pyenv global 3.12.3
 ```
 
 ![env](images/pyenv-python-version.png)
 
 [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv)
 
-### Install Aider Or Poerty virtual enviroments
+### Install Aider or Poetry Virtual Environments
 
-Once we have multipe python version running, there are sometimes a neeed to have a pre loaded global dependecies to be used for the project.
+Once you have multiple Python versions running, you may need to set up global dependencies for your projects.
 
-[aider](https://github.com/paul-gauthier/aider)
+#### Aider
+
+[aider](https://github.com/paul-gauthier/aider) is a tool for managing virtual environments.
 
 ```bash
-    # create an enviroment
-    pyenv virtualenv 3.12.3 aider
+# Create an environment
+pyenv virtualenv 3.12.3 aider
 
-    # to display newly created copy 
-    pyenv versions
+# Display newly created environment
+pyenv versions
 
-    # activate now
-    pyenv activate aider
-    
-    # deactivate
-    pyenv deactivate
+# Activate the environment
+pyenv activate aider
 
-    # install aider
-    pip install aider-chat
+# Deactivate the environment
+pyenv deactivate
 
-    # to see number of package that were installed
-    pip freeze | wc -l
-    
+# Install aider
+pip install aider-chat
+
+# Display the number of installed packages
+pip freeze | wc -l
 ```
 
+#### Poetry
 
+[Poetry](https://python-poetry.org/) is another tool for dependency management and packaging in Python.
+
+```bash
+# Install Poetry
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Configure Poetry to create virtual environments inside the project directory
+poetry config virtualenvs.in-project true
+
+# Create a new Poetry project
+poetry new my-project
+
+# Navigate to the project directory
+cd my-project
+
+# Add dependencies
+poetry add requests
+
+# Activate the virtual environment
+poetry shell
+
+# Deactivate the virtual environment
+exit
+```
 
 ## References
 
--[pyenvs-python-is-missing-bzip2-module](https://stackoverflow.com/questions/60775172/pyenvs-python-is-missing-bzip2-module)
--[How do I install a different Python version using apt-get?](https://askubuntu.com/questions/682869/how-do-i-install-a-different-python-version-using-apt-get)
--[Managing multiple Python versions on Ubuntu/Pop!_OS](https://medium.com/@kameshwarasekar/managing-multiple-python-versions-on-ubuntu-pop-os-eae4d0bf3171)
+- [pyenvs-python-is-missing-bzip2-module](https://stackoverflow.com/questions/60775172/pyenvs-python-is-missing-bzip2-module)
+- [How do I install a different Python version using apt-get?](https://askubuntu.com/questions/682869/how-do-i-install-a-different-python-version-using-apt-get)
+- [Managing multiple Python versions on Ubuntu/Pop!_OS](https://medium.com/@kameshwarasekar/managing-multiple-python-versions-on-ubuntu-pop-os-eae4d0bf3171)
