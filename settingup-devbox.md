@@ -113,6 +113,12 @@ pip install aider-chat
 pip freeze | wc -l
 ```
 
+By default, auto-commit changes are enabled. To override the default, add the following line to your `~/.bashrc` file:
+
+```bash
+export AIDER_AUTO_COMMITS=0
+```
+
 ```bash
 #OLLAMA_API_BASE=http://localhost:11434/
 
