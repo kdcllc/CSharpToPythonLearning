@@ -118,6 +118,18 @@ pip freeze | wc -l
 [Poetry](https://python-poetry.org/) is another tool for dependency management and packaging in Python.
 
 ```bash
+# Create an environment
+pyenv virtualenv 3.12.3 poetry
+
+# Display newly created environment
+pyenv versions
+
+# Activate the environment
+pyenv activate poetry
+
+# Deactivate the environment
+pyenv deactivate
+
 # Install Poetry
 curl -sSL https://install.python-poetry.org | python3 -
 
